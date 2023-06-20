@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# RPI Composite
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+RPI Composite is a web application built with React that provides a platform for managing composite materials. It includes features such as a calendar for scheduling material production, options for customization, and user authentication.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Installation](#installation)
+- [Usage](#usage)
+- [Configuration](#configuration)
+- [File Structure](#file-structure)
+- [Dependencies](#dependencies)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Follow these steps to set up and run the project locally:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone the repository:
 
-### `npm test`
+   ```shell
+   git clone https://github.com/Software-Design-and-Documentation/client.git
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Navigate to the project directory:
 
-### `npm run build`
+   ```shell
+   cd rpi-composite
+3. Install the dependencies:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```shell
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   npm install
+4. To start the project, use the following command:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```shell
 
-### `npm run eject`
+   npm start
+   This command will run the application in development mode. Open http://localhost:3000 in your web browser to view it.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ ## File Structure
+    - src/
+    - components/
+        - Button/
+        - Button.js
+        - Button.css
+        - Navbar/
+        - Navbar.js
+        - Navbar.css
+        - ...
+    - pages/
+        - Home/
+        - Home.js
+        - Home.css
+        - CalPage/
+        - CalPage.js
+        - CalPage.css
+        - ...
+    - App.js
+    - index.js
+    - ...
+    - public/
+    - index.html
+    - ...
+    - package.json
+    - README.md
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    The src directory contains the source code of the application. The components directory includes reusable UI components such as Button and Navbar. The pages directory contains different pages of the application, including Home and CalPage. The main entry point of the application is App.js, and the React rendering happens in index.js. The public directory includes the static assets and the index.html file.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Dependencies
 
-## Learn More
+The project relies on the following dependencies:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    - [@testing-library/jest-dom](https://www.npmjs.com/package/@testing-library/jest-dom) (version ^5.16.5): Provides custom Jest matchers for DOM elements.
+    - [@testing-library/react](https://www.npmjs.com/package/@testing-library/react) (version ^13.4.0): Provides utilities for testing React components.
+    - [@testing-library/user-event](https://www.npmjs.com/package/@testing-library/user-event) (version ^13.5.0): Simulates user events for testing React components.
+    - [react](https://www.npmjs.com/package/react) (version ^18.2.0): JavaScript library for building user interfaces.
+    - [react-dom](https://www.npmjs.com/package/react-dom) (version ^18.2.0): Provides DOM-specific methods for React.
+    - [react-router-dom](https://www.npmjs.com/package/react-router-dom) (version ^6.12.1): DOM bindings for React Router.
+    - [react-scripts](https://www.npmjs.com/package/react-scripts) (version 5.0.1): Configuration and scripts for Create React App.
+    - [web-vitals](https://www.npmjs.com/package/web-vitals) (version ^2.1.4): Library for measuring web vitals metrics.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    You can find the latest versions of these dependencies on [npm](https://www.npmjs.com/). The versions specified above are minimum requirements, and the project may work with newer versions as well.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
