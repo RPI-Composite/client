@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../App.css';
+import axios from 'axios';
 import Fullcalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
@@ -24,6 +25,21 @@ function CalPage() {
     },
     // Add more events as needed
   ];
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await axios.get('/acalRaw'); // Make a GET request to the server's /acalRaw endpoint
+        const formattedEvents = response.data; // Assume the response from the server is already in the required format
+        setEvents(formattedEvents);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    fetchData();
+  }, []);
 
   return (
     <div>
