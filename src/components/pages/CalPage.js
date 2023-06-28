@@ -18,7 +18,7 @@ function CalPage() {
   }, []);
 
   const fetchEvents = () => {
-    axios.get('/api/events')
+    axios.get('/acalRaw')
       .then(response => {
         const eventData = response.data;
 
