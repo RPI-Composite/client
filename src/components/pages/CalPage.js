@@ -18,7 +18,7 @@ function CalPage() {
   }, []);
 
   const fetchEvents = () => {
-    axios.get('/scripts/academic-calendar.js')
+    axios.get('/api/events')
       .then(response => {
         const eventData = response.data;
 
