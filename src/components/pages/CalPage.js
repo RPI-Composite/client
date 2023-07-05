@@ -6,52 +6,81 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 
+const convertMonthToDigit = monthName => {
+  const months = {
+    January: '01',
+    February: '02',
+    March: '03',
+    April: '04',
+    May: '05',
+    June: '06',
+    July: '07',
+    August: '08',
+    September: '09',
+    October: '10',
+    November: '11',
+    December: '12'
+  };
 
-
+  return months[monthName];
+};
 
 
 function CalPage() {
   const [events, setEvents] = useState([]);
 
-  useEffect(() => {
-    fetchEvents();
-  }, []);
+useEffect(() => {
+  fetchEvents();
+}, []);
 
-  const fetchEvents = () => {
-    axios.get('/acalRaw')
-      .then(response => {
-        const eventData = response.data;
+const fetchEvents = () => {
+  axios
+    .get('http://localhost:3000/acalRaw')
+    .then(response => {
+      const eventData = response.data;
 
-        const parsedEvents = [];
+      const parsedEvents = [];
 
-        for (const key in eventData) {
-          if (eventData.hasOwnProperty(key)) {
-            const monthYear = key;
-            const eventsForMonth = eventData[key];
+      for (const monthYear in eventData) {
+        if (eventData.hasOwnProperty(monthYear)) {
+          const eventsForMonth = eventData[monthYear];
 
-            for (const date in eventsForMonth) {
-              if (eventsForMonth.hasOwnProperty(date)) {
-                const event = eventsForMonth[date];
+          for (const date in eventsForMonth) {
+            if (eventsForMonth.hasOwnProperty(date)) {
+              const event = eventsForMonth[date];
 
-                const eventObj = {
-                  monthYear: monthYear,
-                  date: date,
-                  txt: event.txt,
-                  href: event.href
-                };
+              console.log(date);
 
-                parsedEvents.push(eventObj);
-              }
+              let [monthName, day, year] = date.split(' ');
+
+              day = day.slice(0,-1);
+
+              const month = convertMonthToDigit(monthName);
+
+              const formattedDate = `${year}-${month}-${day}`;
+
+              const eventObj = {
+                title: event.txt,
+                start: formattedDate,
+                // Add other properties like 'end' if applicable
+                // end: '...',
+                // ...
+              };
+
+              parsedEvents.push(eventObj);
             }
           }
         }
+      }
 
-        setEvents(parsedEvents);
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  };
+      setEvents(parsedEvents);
+    })
+    .catch(error => {
+      console.error(error);
+    });
+};
+
+
   
 
   return (
