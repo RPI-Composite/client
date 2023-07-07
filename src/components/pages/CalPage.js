@@ -29,76 +29,74 @@ const convertMonthToDigit = monthName => {
 function CalPage() {
   const [events, setEvents] = useState([]);
 
-useEffect(() => {
-  fetchEvents();
-}, []);
+  useEffect(() => {
+    fetchEvents();
+  }, []);
 
-const fetchEvents = () => {
-  axios
-    .get('http://localhost:3000/acalRaw')
-    .then(response => {
-      const eventData = response.data;
+  const fetchEvents = () => {
+    axios
+      .get('http://localhost:3000/acalRaw')
+      .then(response => {
+        const eventData = response.data;
 
-      const parsedEvents = [];
+        const parsedEvents = [];
 
-      for (const monthYear in eventData) {
-        if (eventData.hasOwnProperty(monthYear)) {
-          const eventsForMonth = eventData[monthYear];
+        for (const monthYear in eventData) {
+          if (eventData.hasOwnProperty(monthYear)) {
+            const eventsForMonth = eventData[monthYear];
 
-          for (const date in eventsForMonth) {
-            if (eventsForMonth.hasOwnProperty(date)) {
-              const event = eventsForMonth[date];
+            for (const date in eventsForMonth) {
+              if (eventsForMonth.hasOwnProperty(date)) {
+                const event = eventsForMonth[date];
 
-              console.log(date);
+                console.log(date);
 
-              let [monthName, day, year] = date.split(' ');
+                let [monthName, day, year] = date.split(' ');
 
-              day = day.slice(0,-1);
+                day = day.slice(0,-1);
 
-              const month = convertMonthToDigit(monthName);
+                const month = convertMonthToDigit(monthName);
 
-              const formattedDate = `${year}-${month}-${day}`;
+                const formattedDate = `${year}-${month}-${day}`;
 
-              const eventObj = {
-                title: event.txt,
-                start: formattedDate,
-                // Add other properties like 'end' if applicable
-                // end: '...',
-                // ...
-              };
+                const eventObj = {
+                  title: event.txt,
+                  start: formattedDate,
+                  url: event.href,
+                  // Add other properties like 'end' if applicable
+                  // end: '...',
+                  // ...
+                };
 
-              parsedEvents.push(eventObj);
+                parsedEvents.push(eventObj);
+              }
             }
           }
         }
-      }
 
-      setEvents(parsedEvents);
-    })
-    .catch(error => {
-      console.error(error);
-    });
-};
+        setEvents(parsedEvents);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  };
 
 
   
 
   return (
     <div>
-      {/* Main Calendar */}
-      <div>
-        <Fullcalendar
-          plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-          initialView={"dayGridMonth"}
-          headerToolbar={{
-            start: "today prev,next", // will normally be on the left. if RTL, will be on the right
-            center: "title",
-            end: "dayGridMonth,timeGridWeek,timeGridDay", // will normally be on the right. if RTL, will be on the left
-          }}
-          height={"90vh"}
-          events={events}
-        />
-      </div>
+      <Fullcalendar
+        plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+        initialView={"dayGridMonth"}
+        headerToolbar={{
+          start: "today prev,next", // will normally be on the left. if RTL, will be on the right
+          center: "title",
+          end: "dayGridMonth,timeGridWeek,timeGridDay", // will normally be on the right. if RTL, will be on the left
+        }}
+        height={"90vh"}
+        events={events}
+      />
     </div>
   );
 }
