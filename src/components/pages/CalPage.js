@@ -99,10 +99,6 @@ const fetchEvents = () => {
           events={events}
         />
       </div>
-      {/* Side Bar */}
-      <div>
-
-      </div>
     </div>
   );
 }
