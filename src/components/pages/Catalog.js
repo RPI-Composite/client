@@ -3,9 +3,9 @@ import '../../App.css';
 
 function Catalog() {
   return (
-    <>
-        <h1>Catalog Page</h1>
-    </>
+    <div>
+        <h1>Dining Page</h1>
+    </div>
   );
 }
 
