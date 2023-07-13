@@ -4,7 +4,7 @@ import '../../App.css';
 function Catalog() {
   return (
     <div>
-        <h1>Dining Page</h1>
+        <h1>Catalog</h1>
     </div>
   );
 }
