@@ -9,7 +9,7 @@ function AboutUs() {
             <div className="headerSection">
                 <h2>Who developed RPI Composite</h2>
                 <p><b>Itamar Oren-Naftalovich</b>: Junior Computer Science Student at RPI.</p>
-                <p><b>Ben Manicke</b>: Junior Computer Science Student at RPI.</p>
+                <p><b>Ben Manicke</b>: Junior Computer Science and Information Technology & Web Science Student at RPI.</p>
                 <p><b>Chris Bejasa</b>: Junior Computer Science Student at RPI.</p>
                 <p><b>Siddhant Agarwal</b>: Junior Computer Science Student at RPI. Working in Full Stack Development of the website.</p>
                 <p><b>Albert Bao</b>: Junior Computer Science Student at RPI.</p>
