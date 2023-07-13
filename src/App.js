@@ -6,6 +6,7 @@ import CalPage from './components/pages/CalPage';
 import Housing from './components/pages/Housing';
 import Dining from './components/pages/Dining';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Catalog from './components/pages/Catalog';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='/calpage' element={<CalPage />} />
           <Route path='/housing' element={<Housing />} />
           <Route path='/dining' element={<Dining />} />
+          <Route path='/catalog' element={<Catalog />} />
           {/* <Route path='/products' element={<Products />} />
           <Route path='/sign-up' element={<SignUp />} /> */}
         </Routes>
