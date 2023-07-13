@@ -82,3 +82,23 @@ The project relies on the following dependencies:
 
     You can find the latest versions of these dependencies on [npm](https://www.npmjs.com/). The versions specified above are minimum requirements, and the project may work with newer versions as well.
 
+
+
+## Run Code
+
+```      # Start the server
+   Set-Location -Path ".\server"
+   Start-Process -FilePath "npm" -ArgumentList "start" -NoNewWindow
+
+   # Start the client
+   Set-Location -Path "..\client"
+   Start-Process -FilePath "npm" -ArgumentList "start" -NoNewWindow
+```
+
+Add this file and call it start.ps1
+
+Then in the root directory run .\start.ps1
+
+Press Y to run on different path
+
+Then put any key and press enter again.
