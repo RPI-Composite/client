@@ -9,9 +9,13 @@ const diningHallStyles = {
 
 function Dining() {
   const [diningHallInfo, setDiningHallInfo] = useState(null);
+  const [mealPrices, setMealPrices] = useState(null);
+  const [diningPlans, setDiningPlans] = useState(null);
 
   useEffect(() => {
     fetchDiningHallInfo();
+    fetchMealPrices();
+    fetchDiningPlans();
   }, []);
 
   const fetchDiningHallInfo = async () => {
@@ -21,6 +25,26 @@ function Dining() {
       setDiningHallInfo(data);
     } catch (error) {
       console.error('Error fetching dining hall information:', error);
+    }
+  };
+
+  const fetchMealPrices = async () => {
+    try {
+      const response = await axios.get('http://localhost:3000/diningprices');
+      const data = response.data;
+      setMealPrices(data);
+    } catch (error) {
+      console.error('Error fetching meal prices:', error);
+    }
+  };
+
+  const fetchDiningPlans = async () => {
+    try {
+      const response = await axios.get('http://localhost:3000/diningplans');
+      const data = response.data;
+      setDiningPlans(data);
+    } catch (error) {
+      console.error('Error fetching dining plans:', error);
     }
   };
 
@@ -62,6 +86,15 @@ function Dining() {
                       Location: Latitude: {info.loc.lat}, Longitude: {info.loc.long}
                     </p>
                   )}
+                  {mealPrices && mealPrices[hall] && (
+                    <div>
+                      <p>Meal Prices:</p>
+                      <ul>
+                        <li>Flex: {mealPrices[hall].flex}</li>
+                        <li>Other: {mealPrices[hall].other}</li>
+                      </ul>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -69,6 +102,23 @@ function Dining() {
         </div>
       ) : (
         <p>Loading dining hall information...</p>
+      )}
+      {diningPlans && (
+        <div>
+          <h2>Dining Plans</h2>
+          {Object.entries(diningPlans).map(([title, plans]) => (
+            <div key={title}>
+              <h3>{title}</h3>
+              <ul>
+                {Object.entries(plans).map(([plan, description]) => (
+                  <li key={plan}>
+                    {plan}: {description}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       )}
     </div>
   );
