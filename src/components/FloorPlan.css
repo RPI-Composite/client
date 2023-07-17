@@ -1,0 +1,52 @@
+.bodyMain {
+  margin: 10px;
+  margin-left: 15px;
+  margin-bottom: 30px;
+}
+
+.floorPlanBtn {
+  color: #ffffff;
+  background-color: #2d63c8;
+  font-size: 19px;
+  border: 1px solid #2d63c8;
+  padding: 15px 50px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.floorPlanBtn:hover {
+  color: #000000;
+  background-color: #99c1f1;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+  margin: 10px;
+}
+
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  width: 33%;
+}
+
+.sectTitle {
+  margin-top: 40px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.dormName {
+  color: rgb(252, 0, 0);
+  margin-top: 10px;
+}
+
+.dormCohort {
+  color:rgb(255, 145, 0);
+  margin-top: 10px;
+}
