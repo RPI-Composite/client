@@ -42,11 +42,11 @@ tr:nth-child(even) {
 }
 
 .dormName {
-  color: rgb(252, 0, 0);
+  color: #ca262c;
   margin-top: 10px;
 }
 
 .dormCohort {
-  color:rgb(255, 145, 0);
+  color:rgb(211, 123, 8);
   margin-top: 10px;
 }
