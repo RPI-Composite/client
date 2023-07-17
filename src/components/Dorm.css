@@ -47,6 +47,23 @@ tr:nth-child(even) {
 }
 
 .dormCohort {
-  color:rgb(211, 123, 8);
+  color: rgb(211, 123, 8);
   margin-top: 10px;
+}
+
+.housingURL {
+  text-decoration: none;
+}
+
+/* Set the link color for different states */
+.housingURL:link,
+.housingURL:visited {
+  color: #ca262c;
+}
+
+.housingURL:hover,
+.housingURL:focus,
+.housingURL:active {
+  color: #000000;
+  text-decoration: underline;
 }
