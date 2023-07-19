@@ -77,3 +77,4 @@ function CSTemplate() {
 
 }
 
+export default CSTemplate;
