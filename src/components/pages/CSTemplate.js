@@ -34,19 +34,19 @@ function CSTemplate() {
             setMathOptionI(mathOptionIArray);
 
             const mathOptionIIArray = totalCoursesResponse.filter(course => {
-                const courseCode = course["subj-code"]["crse"];
+                const courseCode = course["subj-code"]["id"];
                 return courseCode.startsWith("MATH") || courseCode.startsWith("MATP");
             });
             setMathOptionII(mathOptionIIArray);
 
             const csOptionArray = totalCoursesResponse.filter(course => {
-                const courseCode = course["subj-code"]["crse"];
+                const courseCode = course["subj-code"]["id"];
                 return courseCode.startsWith("CSCI") && courseCode !== "CSCI-4210" && courseCode !== "CSCI-4430";
             });
             setCsOption(csOptionArray);
 
             const scienceOptionArray = totalCoursesResponse.filter(course => {
-                const courseCode = course["subj-code"]["crse"];
+                const courseCode = course["subj-code"]["id"];
                 return courseCode.startsWith("ASTR") || courseCode.startsWith("BIOL") || courseCode.startsWith("CHEM") ||
                     courseCode.startsWith("ERTH") || courseCode.startsWith("ENVE") || courseCode.startsWith("PHYS");
             });
@@ -61,7 +61,7 @@ function CSTemplate() {
         try {
             const responseArray = await Promise.all(
                 queries.map(async (query) => {
-                    const response = await axios.post('http://localhost:3000/searchCourses', {
+                    const response = await axios.get('http://localhost:3000/searchCourses', {
                         query: query,
                     });
                     return response.data;
