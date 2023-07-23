@@ -78,7 +78,7 @@ function Navbar() {
             </li>
             <li className='nav-item'>
               <Link
-                to='/catalog'
+                to='/cstemplate'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >

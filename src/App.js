@@ -22,7 +22,7 @@ function App() {
           <Route path='/dining' element={<Dining />} />
           <Route path='/catalog' element={<Catalog />} />
           <Route path='/housing/:dormid' element={<Dorm />} />
-          <Route path='/CSTemplate' element={<CSTemplate />} />
+          <Route path='/cstemplate' element={<CSTemplate />} />
           {/* <Route path='/products' element={<Products />} />
           <Route path='/sign-up' element={<SignUp />} /> */}
         </Routes>
