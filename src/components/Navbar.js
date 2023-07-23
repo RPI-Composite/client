@@ -78,6 +78,15 @@ function Navbar() {
             </li>
             <li className='nav-item'>
               <Link
+                to='/catalog'
+                className='nav-links'
+                onClick={closeMobileMenu}
+              >
+                CS Template
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link
                 to='/options'
                 className='nav-links'
                 onClick={closeMobileMenu}
