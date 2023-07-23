@@ -9,6 +9,7 @@ import Dorm from './components/pages/Dorm';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Catalog from './components/pages/Catalog';
 import CSTemplate from './components/pages/CSTemplate';
+import OtherHelp from './components/pages/OtherHelp';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path='/catalog' element={<Catalog />} />
           <Route path='/housing/:dormid' element={<Dorm />} />
           <Route path='/cstemplate' element={<CSTemplate />} />
+          <Route path='/otherhelp' element={<OtherHelp />} />
           {/* <Route path='/products' element={<Products />} />
           <Route path='/sign-up' element={<SignUp />} /> */}
         </Routes>
