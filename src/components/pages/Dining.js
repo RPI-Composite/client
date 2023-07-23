@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../../App.css';
+import '../Dining.css';
 
 const diningHallStyles = {
   textAlign: 'center',
@@ -45,25 +46,45 @@ function Dining() {
     };
   
     return (
-      <div>
-        <h1>Dining Halls</h1>
+      <div class="bodyMain">
+        <h1 class="titleMain">Dining Halls</h1>
         {diningHallInfo ? (
-          <div>
+          <div class="diningMain">
             {Object.entries(diningHallInfo).map(([category, halls]) => (
               <div key={category}>
-                <h2>{category}</h2>
+                <h1>{category}</h1>
                 {Object.entries(halls).map(([hall, info]) => (
                   <div key={hall}>
-                    <h3>{hall}</h3>
-                    <p>Regular Hours:</p>
-                    <ul>
-                      {Object.entries(info.reghours).map(([days, hours]) => (
-                        <li key={days}>
-                          {days}: {hours.open} - {hours.close}
-                        </li>
-                      ))}
-                    </ul>
-                    {info.spechours && (
+                    <h3>{hall.toUpperCase()}</h3>
+                    <p style={{textDecoration: 'underline'}}>Regular Hours:</p>
+                  <ul>
+                    {Object.entries(info.reghours).map(([days, hours]) => {
+                      if (typeof hours == 'object') {
+                        return (
+                          <li key={days}>
+                            {Object.entries(hours).map(([meal, t]) => (
+                                <span class="hoursContainer">
+                                  <p style={{display: "inline-block"}}>{meal}</p>
+                                  <p style={{display: "inline-block", fontFamily: "-moz-initial"}}>&nbsp;&nbsp;{t}</p>
+                                  <br></br>
+                                </span>
+                              ))}
+                          </li>
+                        )
+                      }
+                      else {
+                        return (
+                          <span class="hoursContainer">
+                            <p style={{display: "inline-block"}}>{days.replaceAll(',', ', ')}:</p>
+                            <p style={{display: "inline-block", fontFamily: "-moz-initial"}}>&nbsp;&nbsp;{hours}</p>
+                            <br></br>
+                          </span>
+                        );
+                      }
+                      
+                    })}
+                  </ul>
+                    {/* {info.spechours && (
                       <div>
                         <p>Special Hours:</p>
                         <ul>
@@ -74,12 +95,12 @@ function Dining() {
                           ))}
                         </ul>
                       </div>
-                    )}
-                    {info.desc && <p>Description: {info.desc}</p>}
-                    {info.phone && <p>Phone: {info.phone}</p>}
+                    )} */}
+                    {info.desc && <p style={{fontFamily: "-moz-initial", marginTop: '5px'}}><span style={{textDecoration: 'underline'}}>Description:</span><br></br>{info.desc}</p>}
+                    {info.phone && <p>Phone: <a href={"tel:+1" + info.phone}>{info.phone}</a></p>}
                     {info.loc && (
-                      <p>
-                        Location: Latitude: {info.loc.lat}, Longitude: {info.loc.long}
+                      <p style={{marginTop: '4px;'}}>
+                        Location: <span style={{fontFamily: "-moz-initial"}}>Latitude: {info.loc.lat}, Longitude: {info.loc.long}</span>
                       </p>
                     )}
                     {mealPrices && mealPrices[hall] && (
