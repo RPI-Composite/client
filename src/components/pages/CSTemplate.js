@@ -27,11 +27,16 @@ function CSTemplate() {
             const totalCoursesResponse = await fetchCoursesData(totalQueries);
 
             // Parse and filter courses into corresponding arrays
-            const requiredCoursesArray = totalCoursesResponse.filter(course => requiredCourses_id.includes(course["subj-code"]["crse"]));
+            const requiredCoursesArray = totalCoursesResponse.filter(course => requiredCourses_id.includes(course["subj-code"]));
             setRequiredCourses(requiredCoursesArray);
 
-            const mathOptionIArray = totalCoursesResponse.filter(course => mathOptionI_id.includes(course["subj-code"]["crse"]));
+            const mathOptionIArray = totalCoursesResponse.filter(course => mathOptionI_id.includes(course["subj-code"]));
             setMathOptionI(mathOptionIArray);
+
+            //Test
+            console.log(totalCoursesResponse);
+            console.log(requiredCoursesArray);
+            console.log(mathOptionIArray);
 
             const mathOptionIIArray = totalCoursesResponse.filter(course => {
                 const courseCode = course["subj-code"]["id"];
@@ -51,6 +56,8 @@ function CSTemplate() {
                     courseCode.startsWith("ERTH") || courseCode.startsWith("ENVE") || courseCode.startsWith("PHYS");
             });
             setScienceOption(scienceOptionArray);
+            
+            
 
         } catch (error) {
             console.error(error);
@@ -61,18 +68,21 @@ function CSTemplate() {
         try {
             const responseArray = await Promise.all(
                 queries.map(async (query) => {
-                    const response = await axios.get('http://localhost:3000/searchCourses', {
-                        query: query,
-                    });
+                    const response = await axios.get(`http://localhost:3000/searchCourses?query=${query}`);
                     return response.data;
                 })
             );
-            return responseArray;
+            // Merge the responses together to one array
+            console.log(responseArray);
+            const mergedArray = responseArray.flatMap((courseArray) => Object.entries(courseArray));
+
+            return mergedArray;
         } catch (error) {
             console.error(error);
             return [];
         }
     };
+
 
 
 }
