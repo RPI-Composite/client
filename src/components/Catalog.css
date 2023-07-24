@@ -1,11 +1,64 @@
-ul {
-    list-style-type: none;
+  .bodyMain {
+    align-items: center;
+    justify-content: center;
   }
 
-.schoolsSection {
-    margin-top: 50px;
-}
+  .alignTitle {
+    width: 100%;
+    text-align: center;
+  }
 
-.coursesSection {
-    margin-top: 50px;
-}
+  .bodyMainClass {
+    margin-left: 15vw;
+    margin-right: 15vw;
+    margin-top: 40px;
+    margin-bottom: 15vh;
+    border: 2px solid #dddddd
+  }
+
+  .courseDetails {
+    border-top: 2px solid #dddddd;
+    border-bottom: 2px solid #dddddd;
+    background-color: #;
+  }
+  
+  th {
+    border: 1px solid #dddddd;
+    background-color: #ffffff;
+    text-align: left;
+    padding: 8px;
+    width: 33%;
+  }
+  
+  
+  tr {
+    background-color: #ffffff; /* Change this color to the one you desire */
+  }
+
+  li {
+    list-style-type: none;
+  }
+  
+  .catalogURL {
+    text-decoration: none;
+  }
+  
+  /* Set the link color for different states */
+  .catalogURL:link,
+  .catalogURL:visited {
+    color: #ca262c;
+  }
+  
+  .catalogURL:hover,
+  .catalogURL:focus,
+  .catalogURL:active {
+    color: #000000;
+    text-decoration: underline;
+  }
+
+  .catalogHeader {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }

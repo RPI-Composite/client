@@ -8,6 +8,7 @@ import Dining from './components/pages/Dining';
 import Dorm from './components/pages/Dorm';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Catalog from './components/pages/Catalog';
+import Class from './components/pages/Class';
 import CSTemplate from './components/pages/CSTemplate';
 import OtherHelp from './components/pages/OtherHelp';
 
@@ -22,6 +23,7 @@ function App() {
           <Route path='/housing' element={<Housing />} />
           <Route path='/dining' element={<Dining />} />
           <Route path='/catalog' element={<Catalog />} />
+          <Route path='/class/:classid' element={<Class />} />
           <Route path='/housing/:dormid' element={<Dorm />} />
           <Route path='/cstemplate' element={<CSTemplate />} />
           <Route path='/otherhelp' element={<OtherHelp />} />
