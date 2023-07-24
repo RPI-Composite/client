@@ -87,11 +87,11 @@ function Dining() {
               <h1>{category}</h1>
               {Object.entries(halls).map(([hall, info], index) => (
                 <div key={hall} className={`diningHallSection ${index % 2 === 0 ? 'even' : 'odd'}`}>
-                  { 
-                    <h3 className="diningHallName">
-                      <a href={diningHallLinks[hall]}>{hall.toUpperCase()}</a>
-                    </h3>
-                  }
+                  <h3 className="diningHallName">
+                    <a href={diningHallLinks[hall]} style={{ fontFamily: "-moz-initial" }}>
+                      {hall.toUpperCase()}
+                    </a>
+                  </h3>
                   {info.desc && <p className="diningHallDescription"><span style={{textDecoration: 'underline'}}>Description:</span><br />{info.desc}</p>}
                   {info.phone && <p>Phone: <a href={"tel:+1" + info.phone}>{formatPhoneNumber(info.phone)}</a></p>}
                   {info.loc && (
