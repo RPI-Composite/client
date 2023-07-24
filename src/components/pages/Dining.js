@@ -80,21 +80,18 @@ function Dining() {
 
   return (
     <div className="bodyMain">
-      <h1 className="titleMain">Dining Halls</h1>
-      {diningHallInfo ? (
+      <h1 className="titleMain" style={{ fontSize: '36px', fontWeight: 'bold', color: 'blue', textTransform: 'uppercase', textAlign: 'center' }}>Rensselaer Dining</h1>      {diningHallInfo ? (
         <div className="diningMain">
           {Object.entries(diningHallInfo).map(([category, halls]) => (
             <div key={category} className="diningSection">
               <h1>{category}</h1>
               {Object.entries(halls).map(([hall, info], index) => (
                 <div key={hall} className={`diningHallSection ${index % 2 === 0 ? 'even' : 'odd'}`}>
-                  {diningHallLinks[hall] ? (
+                  { 
                     <h3 className="diningHallName">
                       <a href={diningHallLinks[hall]}>{hall.toUpperCase()}</a>
                     </h3>
-                  ) : (
-                    <h3 className="diningHallName">{hall.toUpperCase()}</h3>
-                  )}
+                  }
                   {info.desc && <p className="diningHallDescription"><span style={{textDecoration: 'underline'}}>Description:</span><br />{info.desc}</p>}
                   {info.phone && <p>Phone: <a href={"tel:+1" + info.phone}>{formatPhoneNumber(info.phone)}</a></p>}
                   {info.loc && (
