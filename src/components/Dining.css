@@ -61,3 +61,112 @@
   
   /* Add more CSS styles as needed */
   
+  /* Global styles for the entire page */
+.bodyMain {
+    margin-left: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  .titleMain {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .diningMain {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  /* Styles for each dining section */
+  .diningSection {
+    flex: 0 0 calc(33.33% - 20px);
+    margin-bottom: 30px;
+    padding: 10px;
+  }
+  
+  .diningHallSection {
+    border: 2px solid #ccc;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+  
+
+/* Gradients of red and green for even and odd dining hall sections */
+  .diningHallSection.even {
+    background: linear-gradient(to right, #cc0000a8, #b3910891, #b6c91293);
+  }
+
+  
+  .diningHallSection.odd {
+    background: linear-gradient(to right, #00cc0091, #08c6a68a), #08a0c667;
+  }
+  
+  /* Add border styles for dining hall sections */
+.diningHallSection {
+  border: 2px solid;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.diningHallName {
+  /* Add your desired styles for the dining hall name here */
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  /* Add any other styles you want */
+}
+
+.diningHallName a {
+  /* Add your styles for the links inside the dining hall name */
+  text-decoration: none;
+  color: blue; /* Change the link color to your desired color */
+}
+
+.diningHallName a:hover {
+  /* Add any hover styles for the links */
+  text-decoration: underline;
+  }
+  
+  .diningHallSection {
+  border: 4px solid; /* Increase border width to 4px */
+  border-radius: 10px;
+  padding: 10px;
+  }
+  
+  /* Add red and blue borders */
+  .diningHallSection.even {
+  border-color: #ff0000; /* Red border for even sections */
+  }
+  
+  .diningHallSection.odd {
+  border-color: #0000ff; /* Blue border for odd sections */
+  }
+
+
+.diningHallSection {
+  border: 4px solid; /* Increase border width to 4px */
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* Add red and blue borders */
+.diningHallSection.even {
+  border-color: #ff0000; /* Red border for even sections */
+}
+
+.diningHallSection.odd {
+  border-color: #0000ff; /* Blue border for odd sections */
+}
+  
+  
+  .diningHallDescription {
+    text-decoration: underline;
+  }
+  
+  .hoursContainer {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Add more CSS styles as needed */

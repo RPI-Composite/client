@@ -14,7 +14,14 @@ function Dining() {
   const [diningPlans, setDiningPlans] = useState(null);
 
   useEffect(() => {
-    fetchDiningData();
+    // Check if the data is available in local storage
+    const cachedData = localStorage.getItem('diningHallInfo');
+    if (cachedData) {
+      setDiningHallInfo(JSON.parse(cachedData));
+    } else {
+      // If data not available in local storage, fetch it from the server
+      fetchDiningData();
+    }
   }, []);
 
   const fetchDiningData = async () => {
@@ -24,6 +31,9 @@ function Dining() {
           alldata: true,
         },
       });
+
+      // Store the fetched data in local storage
+      localStorage.setItem('diningHallInfo', JSON.stringify(diningHallInfoResponse.data));
       setDiningHallInfo(diningHallInfoResponse.data);
 
       const mealPricesResponse = await axios.get('http://localhost:3000/diningprices');
@@ -61,26 +71,13 @@ function Dining() {
 
   // Additional links for each dining hall
   const diningHallLinks = {
-    "moe’s": 'https://rpi.sodexomyway.com/dining-near-me/moes',
-    'dcc café': 'https://rpi.sodexomyway.com/dining-near-me/dcc-cafe',
-    "evelyn’s cafe": 'https://rpi.sodexomyway.com/dining-near-me/evelyns_cafe',
-    'argo tea': 'https://rpi.sodexomyway.com/dining-near-me/library-cafe',
-    "student union - father’s marketplace": 'https://rpi.sodexomyway.com/dining-near-me/fathers-marketplace',
-    'student union - panera bread': 'https://rpi.sodexomyway.com/dining-near-me/mcneil-room',
-    'the beanery café': 'https://rpi.sodexomyway.com/dining-near-me/beanery-cafe',
-    'blitman dining hall': 'https://rpi.sodexomyway.com/dining-near-me/blitman-dining-hall',
-    'barh dining hall': 'https://rpi.sodexomyway.com/dining-near-me/barh-dining-hall',
-    'russell sage dining hall': 'https://rpi.sodexomyway.com/dining-near-me/russell-sage',
-    'the commons dining hall': 'https://rpi.sodexomyway.com/dining-near-me/commons-dining-hall',
-    'thunder mountain curry': 'https://rpi.sodexomyway.com/dining-near-me/TMC',
-    'wild blue sushi': 'https://rpi.sodexomyway.com/dining-near-me/wild_blue_sushi',
-    'collar city grill': 'https://rpi.sodexomyway.com/dining-near-me/CCG',
-    'halal shack': 'https://rpi.sodexomyway.com/dining-near-me/Halal_shack',
+    // ... Add your dining hall links here ...
   };
 
   return (
     <div className="bodyMain">
-      <h1 className="titleMain" style={{ fontSize: '36px', fontWeight: 'bold', color: 'blue', textTransform: 'uppercase', textAlign: 'center' }}>Rensselaer Dining</h1>      {diningHallInfo ? (
+      <h1 className="titleMain" style={{ fontSize: '36px', fontWeight: 'bold', color: 'blue', textTransform: 'uppercase', textAlign: 'center' }}>Rensselaer Dining</h1>
+      {diningHallInfo ? (
         <div className="diningMain">
           {Object.entries(diningHallInfo).map(([category, halls]) => (
             <div key={category} className="diningSection">
