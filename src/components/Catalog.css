@@ -13,13 +13,12 @@
     margin-right: 15vw;
     margin-top: 40px;
     margin-bottom: 15vh;
-    border: 2px solid #dddddd
+    border: 2px solid #dddddd;
   }
 
   .courseDetails {
     border-top: 2px solid #dddddd;
     border-bottom: 2px solid #dddddd;
-    background-color: #;
   }
   
   th {

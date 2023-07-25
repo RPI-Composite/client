@@ -9,6 +9,12 @@
     margin-bottom: 20px;
   }
   
+  .titleLinks {
+    font-family: "-moz-initial"; 
+    text-decoration: none;  
+    color: black;
+  }
+
   .diningMain {
     display: flex;
     flex-wrap: wrap;

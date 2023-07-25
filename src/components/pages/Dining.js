@@ -61,21 +61,21 @@ function Dining() {
 
   // Additional links for each dining hall
   const diningHallLinks = {
-    "Moe's Southwest Grill": 'https://rpi.sodexomyway.com/dining-near-me/moes',
-    'DCC Café': 'https://rpi.sodexomyway.com/dining-near-me/dcc-cafe',
-    "Evelyn's Cafe": 'https://rpi.sodexomyway.com/dining-near-me/evelyns_cafe',
-    'Argo Tea Café': 'https://rpi.sodexomyway.com/dining-near-me/library-cafe',
-    "Father's Marketplace": 'https://rpi.sodexomyway.com/dining-near-me/fathers-marketplace',
-    'Panera Bread': 'https://rpi.sodexomyway.com/dining-near-me/mcneil-room',
-    'Beanery Café': 'https://rpi.sodexomyway.com/dining-near-me/beanery-cafe',
-    'Blitman Commons': 'https://rpi.sodexomyway.com/dining-near-me/blitman-dining-hall',
-    'BARH Dining Hall': 'https://rpi.sodexomyway.com/dining-near-me/barh-dining-hall',
-    'Russell Sage Dining Hall': 'https://rpi.sodexomyway.com/dining-near-me/russell-sage',
-    'Commons Dining Hall': 'https://rpi.sodexomyway.com/dining-near-me/commons-dining-hall',
-    'RPI McNeil Room': 'https://rpi.sodexomyway.com/dining-near-me/mcneil-room',
-    'Wild Blue Sushi': 'https://rpi.sodexomyway.com/dining-near-me/wild_blue_sushi',
-    'Center for Biotechnology and Interdisciplinary Studies': 'https://rpi.sodexomyway.com/dining-near-me/CCG',
-    'Halal Shack': 'https://rpi.sodexomyway.com/dining-near-me/Halal_shack',
+    "moe’s": 'https://rpi.sodexomyway.com/dining-near-me/moes',
+    'dcc café': 'https://rpi.sodexomyway.com/dining-near-me/dcc-cafe',
+    "evelyn’s cafe": 'https://rpi.sodexomyway.com/dining-near-me/evelyns_cafe',
+    'argo tea': 'https://rpi.sodexomyway.com/dining-near-me/library-cafe',
+    "student union - father’s marketplace": 'https://rpi.sodexomyway.com/dining-near-me/fathers-marketplace',
+    'student union - panera bread': 'https://rpi.sodexomyway.com/dining-near-me/mcneil-room',
+    'the beanery café': 'https://rpi.sodexomyway.com/dining-near-me/beanery-cafe',
+    'blitman dining hall': 'https://rpi.sodexomyway.com/dining-near-me/blitman-dining-hall',
+    'barh dining hall': 'https://rpi.sodexomyway.com/dining-near-me/barh-dining-hall',
+    'russell sage dining hall': 'https://rpi.sodexomyway.com/dining-near-me/russell-sage',
+    'the commons dining hall': 'https://rpi.sodexomyway.com/dining-near-me/commons-dining-hall',
+    'thunder mountain curry': 'https://rpi.sodexomyway.com/dining-near-me/TMC',
+    'wild blue sushi': 'https://rpi.sodexomyway.com/dining-near-me/wild_blue_sushi',
+    'collar city grill': 'https://rpi.sodexomyway.com/dining-near-me/CCG',
+    'halal shack': 'https://rpi.sodexomyway.com/dining-near-me/Halal_shack',
   };
 
   return (
@@ -88,7 +88,7 @@ function Dining() {
               {Object.entries(halls).map(([hall, info], index) => (
                 <div key={hall} className={`diningHallSection ${index % 2 === 0 ? 'even' : 'odd'}`}>
                   <h3 className="diningHallName">
-                    <a href={diningHallLinks[hall]} style={{ fontFamily: "-moz-initial" }}>
+                    <a target="_blank" className='titleLinks' href={diningHallLinks[hall]}>
                       {hall.toUpperCase()}
                     </a>
                   </h3>
