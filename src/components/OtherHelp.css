@@ -1,0 +1,24 @@
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.usefulLinks {
+    margin-bottom: 2vh;
+    background-color: aliceblue;
+    border-bottom: 2px solid black;
+}
+
+.usefulLinks a:link {
+    color: black;
+}
+    
+.usefulLinks a:hover {
+    color: white;
+}
+
+.usefulLinks a:visited {
+    color: red; 
+}
