@@ -5,6 +5,10 @@ h1 {
     margin-bottom: 10px;
 }
 
+.pdfs {
+    margin-left: 125px;
+}
+
 .usefulLinks {
     margin-bottom: 2vh;
     background-color: aliceblue;
@@ -12,13 +16,15 @@ h1 {
 }
 
 .usefulLinks a:link {
+    text-decoration: none;
     color: black;
 }
     
 .usefulLinks a:hover {
-    color: white;
+    border-bottom: 3px solid rgba(255, 0, 0, 1);
 }
 
 .usefulLinks a:visited {
+    text-decoration: none;
     color: red; 
 }

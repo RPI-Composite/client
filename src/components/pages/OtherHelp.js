@@ -10,27 +10,29 @@ function OtherHelp() {
     <div>
       <div>
         <h1>Campus Map and Disorientation Guide</h1>
-        <object
-        data="./PDFs/RPI_Campus_Map.pdf"
-        type="application/pdf"
-        width="100%"
-        height="500px"
-        >
-        <p>
-          Your browser does not support PDF viewing. You can view the campus map PDF <a href="./PDFs/RPI_Campus_Map.pdf">here</a>.
-        </p>
-        </object>
+        <div className='pdfs'>
+          <object
+          data="./PDFs/RPI_Campus_Map.pdf"
+          type="application/pdf"
+          width="90%"
+          height="500px"
+          >
+          <p>
+            Your browser does not support PDF viewing. You can view the campus map PDF <a href="./PDFs/RPI_Campus_Map.pdf">here</a>.
+          </p>
+          </object>
 
-        <object
-        data="./PDFs/RPI_Disorientation_Guide.pdf"
-        type="application/pdf"
-        width="100%"
-        height="500px"
-        >
-        <p>
-          Your browser does not support PDF viewing. You can view the disorientation guide PDF <a href="./PDFs/RPI_Disorientation_Guide.pdf">here</a>.
-        </p>
-        </object>
+          <object
+          data="./PDFs/RPI_Disorientation_Guide.pdf"
+          type="application/pdf"
+          width="90%"
+          height="500px"
+          >
+          <p>
+            Your browser does not support PDF viewing. You can view the disorientation guide PDF <a href="./PDFs/RPI_Disorientation_Guide.pdf">here</a>.
+          </p>
+          </object>
+        </div>
       </div>
 
       <div>
