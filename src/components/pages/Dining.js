@@ -107,7 +107,7 @@ function Dining() {
                   {info.phone && <p>Phone: <a href={"tel:+1" + info.phone}>{formatPhoneNumber(info.phone)}</a></p>}
                   {info.loc && (
                     <p>
-                      <a href={getLocationLink(info.loc.lat, info.loc.long)} style={{fontFamily: "-moz-initial"}}>
+                      <a href={getLocationLink(info.loc.lat, info.loc.long)} target="_blank" style={{fontFamily: "-moz-initial"}}>
                         Location:</a>
                     </p>
                   )}

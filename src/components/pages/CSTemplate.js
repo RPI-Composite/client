@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../../App.css';
+import '../CSTemplate.css'; // Add the correct path to the CSTemplate.css file
+
+// Rest of the component code...
+
 
 
 // Declaring Courses Lists
@@ -83,8 +87,84 @@ function CSTemplate() {
         }
     };
 
+    console.log("requiredCourses:", requiredCourses);
+  console.log("mathOptionI:", mathOptionI);
+  console.log("mathOptionII:", mathOptionII);
+  console.log("csOption:", csOption);
+  console.log("scienceOption:", scienceOption);
+
+    return (
+        <div className="container">
+          <h1>Rensselaer Course Selection</h1>
+    
+          {/* Required Courses */}
+          <div>
+            <h2>Required Courses</h2>
+            <ul>
+              {requiredCourses.map((course) => (
+                <li key={course.id}>
+                  <span className="course-code">{course["subj-code"]["id"]}</span> - <span className="course-title">{course["crse-title"]}</span>
+                  <p className="course-desc">{course["crse-desc"]}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+    
+          {/* Math Option I */}
+          <div>
+            <h2>Math Option I</h2>
+            <ul>
+              {mathOptionI.map((course) => (
+                <li key={course.id}>
+                  <span className="course-code">{course["subj-code"]["id"]}</span> - <span className="course-title">{course["crse-title"]}</span>
+                  <p className="course-desc">{course["crse-desc"]}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+    
+          {/* Math Option II */}
+          <div>
+            <h2>Math Option II</h2>
+            <ul>
+              {mathOptionII.map((course) => (
+                <li key={course.id}>
+                  <span className="course-code">{course["subj-code"]["id"]}</span> - <span className="course-title">{course["crse-title"]}</span>
+                  <p className="course-desc">{course["crse-desc"]}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+    
+          {/* CS Option */}
+          <div>
+            <h2>CS Option</h2>
+            <ul>
+              {csOption.map((course) => (
+                <li key={course.id}>
+                  <span className="course-code">{course["subj-code"]["id"]}</span> - <span className="course-title">{course["crse-title"]}</span>
+                  <p className="course-desc">{course["crse-desc"]}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+    
+          {/* Science Option */}
+          <div>
+            <h2>Science Option</h2>
+            <ul>
+              {scienceOption.map((course) => (
+                <li key={course.id}>
+                  <span className="course-code">{course["subj-code"]["id"]}</span> - <span className="course-title">{course["crse-title"]}</span>
+                  <p className="course-desc">{course["crse-desc"]}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      );
+    };
+    
+    export default CSTemplate;
 
 
-}
-
-export default CSTemplate;
