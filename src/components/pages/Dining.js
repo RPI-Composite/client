@@ -71,7 +71,21 @@ function Dining() {
 
   // Additional links for each dining hall
   const diningHallLinks = {
-    // ... Add your dining hall links here ...
+    "moe’s": 'https://rpi.sodexomyway.com/dining-near-me/moes',
+    'dcc café': 'https://rpi.sodexomyway.com/dining-near-me/dcc-cafe',
+    "evelyn’s cafe": 'https://rpi.sodexomyway.com/dining-near-me/evelyns_cafe',
+    'argo tea': 'https://rpi.sodexomyway.com/dining-near-me/library-cafe',
+    "student union - father’s marketplace": 'https://rpi.sodexomyway.com/dining-near-me/fathers-marketplace',
+    'student union - panera bread': 'https://rpi.sodexomyway.com/dining-near-me/mcneil-room',
+    'the beanery café': 'https://rpi.sodexomyway.com/dining-near-me/beanery-cafe',
+    'blitman dining hall': 'https://rpi.sodexomyway.com/dining-near-me/blitman-dining-hall',
+    'barh dining hall': 'https://rpi.sodexomyway.com/dining-near-me/barh-dining-hall',
+    'russell sage dining hall': 'https://rpi.sodexomyway.com/dining-near-me/russell-sage',
+    'the commons dining hall': 'https://rpi.sodexomyway.com/dining-near-me/commons-dining-hall',
+    'thunder mountain curry': 'https://rpi.sodexomyway.com/dining-near-me/TMC',
+    'wild blue sushi': 'https://rpi.sodexomyway.com/dining-near-me/wild_blue_sushi',
+    'collar city grill': 'https://rpi.sodexomyway.com/dining-near-me/CCG',
+    'halal shack': 'https://rpi.sodexomyway.com/dining-near-me/Halal_shack',
   };
 
   return (
