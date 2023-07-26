@@ -31,35 +31,40 @@ function CSTemplate() {
             const totalCoursesResponse = await fetchCoursesData(totalQueries);
 
             // Parse and filter courses into corresponding arrays
-            const requiredCoursesArray = totalCoursesResponse.filter(course => requiredCourses_id.includes(course["subj-code"]));
+            const requiredCoursesArray = totalCoursesResponse.filter(course => requiredCourses_id.includes(course["id"]));
             setRequiredCourses(requiredCoursesArray);
 
-            const mathOptionIArray = totalCoursesResponse.filter(course => mathOptionI_id.includes(course["subj-code"]));
+            const mathOptionIArray = totalCoursesResponse.filter(course => mathOptionI_id.includes(course["id"]));
             setMathOptionI(mathOptionIArray);
 
             //Test
-            console.log(totalCoursesResponse);
-            console.log(requiredCoursesArray);
-            console.log(mathOptionIArray);
+            /*
+            console.log("TotalCoursesResponse:",totalCoursesResponse);
+            console.log("RequiredCourseArray:",requiredCoursesArray);
+            console.log("MathOptionIArray:",mathOptionIArray);
+            */
 
             const mathOptionIIArray = totalCoursesResponse.filter(course => {
-                const courseCode = course["subj-code"]["id"];
+                const courseCode = course["id"];
                 return courseCode.startsWith("MATH") || courseCode.startsWith("MATP");
             });
             setMathOptionII(mathOptionIIArray);
+            /*console.log("MathOptionIIArray:",mathOptionIIArray);*/
 
             const csOptionArray = totalCoursesResponse.filter(course => {
-                const courseCode = course["subj-code"]["id"];
+                const courseCode = course["id"];
                 return courseCode.startsWith("CSCI") && courseCode !== "CSCI-4210" && courseCode !== "CSCI-4430";
             });
             setCsOption(csOptionArray);
+            /*console.log("CSOptionArray",csOptionArray);*/
 
             const scienceOptionArray = totalCoursesResponse.filter(course => {
-                const courseCode = course["subj-code"]["id"];
+                const courseCode = course["id"];
                 return courseCode.startsWith("ASTR") || courseCode.startsWith("BIOL") || courseCode.startsWith("CHEM") ||
                     courseCode.startsWith("ERTH") || courseCode.startsWith("ENVE") || courseCode.startsWith("PHYS");
             });
             setScienceOption(scienceOptionArray);
+            /*console.log("ScienceOptionArray:",scienceOptionArray);*/
             
             
 
@@ -77,8 +82,8 @@ function CSTemplate() {
                 })
             );
             // Merge the responses together to one array
-            console.log(responseArray);
-            const mergedArray = responseArray.flatMap((courseArray) => Object.entries(courseArray));
+            /*console.log("ResponseArray:",responseArray);*/
+            const mergedArray = responseArray.flatMap((courseArray) => Object.values(courseArray));
 
             return mergedArray;
         } catch (error) {
@@ -88,10 +93,10 @@ function CSTemplate() {
     };
 
     console.log("requiredCourses:", requiredCourses);
-  console.log("mathOptionI:", mathOptionI);
-  console.log("mathOptionII:", mathOptionII);
-  console.log("csOption:", csOption);
-  console.log("scienceOption:", scienceOption);
+    console.log("mathOptionI:", mathOptionI);
+    console.log("mathOptionII:", mathOptionII);
+    console.log("csOption:", csOption);
+    console.log("scienceOption:", scienceOption);
 
     return (
         <div className="container">
@@ -103,8 +108,8 @@ function CSTemplate() {
             <ul>
               {requiredCourses.map((course) => (
                 <li key={course.id}>
-                  <span className="course-code">{course["subj-code"]["id"]}</span> - <span className="course-title">{course["crse-title"]}</span>
-                  <p className="course-desc">{course["crse-desc"]}</p>
+                  <span className="course-code">{course["id"]}</span> - <span className="course-title">{course["title"]}</span>
+                  <p className="course-desc">{course["desc"]}</p>
                 </li>
               ))}
             </ul>
@@ -116,8 +121,8 @@ function CSTemplate() {
             <ul>
               {mathOptionI.map((course) => (
                 <li key={course.id}>
-                  <span className="course-code">{course["subj-code"]["id"]}</span> - <span className="course-title">{course["crse-title"]}</span>
-                  <p className="course-desc">{course["crse-desc"]}</p>
+                  <span className="course-code">{course["id"]}</span> - <span className="course-title">{course["title"]}</span>
+                  <p className="course-desc">{course["desc"]}</p>
                 </li>
               ))}
             </ul>
@@ -129,8 +134,8 @@ function CSTemplate() {
             <ul>
               {mathOptionII.map((course) => (
                 <li key={course.id}>
-                  <span className="course-code">{course["subj-code"]["id"]}</span> - <span className="course-title">{course["crse-title"]}</span>
-                  <p className="course-desc">{course["crse-desc"]}</p>
+                  <span className="course-code">{course["id"]}</span> - <span className="course-title">{course["title"]}</span>
+                  <p className="course-desc">{course["desc"]}</p>
                 </li>
               ))}
             </ul>
@@ -142,8 +147,8 @@ function CSTemplate() {
             <ul>
               {csOption.map((course) => (
                 <li key={course.id}>
-                  <span className="course-code">{course["subj-code"]["id"]}</span> - <span className="course-title">{course["crse-title"]}</span>
-                  <p className="course-desc">{course["crse-desc"]}</p>
+                  <span className="course-code">{course["id"]}</span> - <span className="course-title">{course["title"]}</span>
+                  <p className="course-desc">{course["desc"]}</p>
                 </li>
               ))}
             </ul>
@@ -155,8 +160,8 @@ function CSTemplate() {
             <ul>
               {scienceOption.map((course) => (
                 <li key={course.id}>
-                  <span className="course-code">{course["subj-code"]["id"]}</span> - <span className="course-title">{course["crse-title"]}</span>
-                  <p className="course-desc">{course["crse-desc"]}</p>
+                  <span className="course-code">{course["id"]}</span> - <span className="course-title">{course["title"]}</span>
+                  <p className="course-desc">{course["desc"]}</p>
                 </li>
               ))}
             </ul>
