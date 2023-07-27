@@ -9,47 +9,57 @@ body {
   }
   
   .container {
-    max-width: 800px;
     margin: 0 auto;
+    max-width: 800px;
     padding: 20px;
+    font-family: Arial, sans-serif;
   }
   
   h1 {
-    font-size: 28px;
-    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
     color: #333;
-    margin-bottom: 20px;
   }
   
   h2 {
+    margin-top: 20px;
     font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    margin-top: 40px;
-    margin-bottom: 20px;
+    color: #555;
   }
   
-  ul {
-    list-style: disc;
-    margin-left: 20px;
-    margin-bottom: 20px;
+  .coursesList {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
   }
   
-  li {
-    margin-bottom: 10px;
+  .courses {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .courses li {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
   }
   
   .course-code {
     font-weight: bold;
+    color: #0088cc;
   }
   
   .course-title {
-    font-style: italic;
+    font-size: 18px;
+    color: #333;
   }
   
   .course-desc {
-    margin-top: 5px;
+    color: #666;
   }
   
-  /* Add any additional custom styles as needed */
-  
+  /* Add some hover effect */
+  .courses li:hover {
+    background-color: #f7f7f7;
+    transition: background-color 0.2s;
+  }

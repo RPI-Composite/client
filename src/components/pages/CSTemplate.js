@@ -103,9 +103,9 @@ function CSTemplate() {
           <h1>Rensselaer Course Selection</h1>
     
           {/* Required Courses */}
-          <div>
+          <div className="coursesList">
             <h2>Required Courses</h2>
-            <ul>
+            <ul className="courses">
               {requiredCourses.map((course) => (
                 <li key={course.id}>
                   <span className="course-code">{course["id"]}</span> - <span className="course-title">{course["title"]}</span>
@@ -116,9 +116,9 @@ function CSTemplate() {
           </div>
     
           {/* Math Option I */}
-          <div>
+          <div className='coursesList'>
             <h2>Math Option I</h2>
-            <ul>
+            <ul className="courses">
               {mathOptionI.map((course) => (
                 <li key={course.id}>
                   <span className="course-code">{course["id"]}</span> - <span className="course-title">{course["title"]}</span>
@@ -129,9 +129,9 @@ function CSTemplate() {
           </div>
     
           {/* Math Option II */}
-          <div>
+          <div className='coursesList'>
             <h2>Math Option II</h2>
-            <ul>
+            <ul className='courses'>
               {mathOptionII.map((course) => (
                 <li key={course.id}>
                   <span className="course-code">{course["id"]}</span> - <span className="course-title">{course["title"]}</span>
@@ -142,9 +142,9 @@ function CSTemplate() {
           </div>
     
           {/* CS Option */}
-          <div>
+          <div className='coursesList'>
             <h2>CS Option</h2>
-            <ul>
+            <ul className='courses'>
               {csOption.map((course) => (
                 <li key={course.id}>
                   <span className="course-code">{course["id"]}</span> - <span className="course-title">{course["title"]}</span>
@@ -155,9 +155,9 @@ function CSTemplate() {
           </div>
     
           {/* Science Option */}
-          <div>
+          <div className='coursesList'>
             <h2>Science Option</h2>
-            <ul>
+            <ul className='courses'>
               {scienceOption.map((course) => (
                 <li key={course.id}>
                   <span className="course-code">{course["id"]}</span> - <span className="course-title">{course["title"]}</span>
