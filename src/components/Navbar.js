@@ -6,8 +6,12 @@ import './Navbar.css';
 function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
+  const [activeTab, setActiveTab] = useState('Home');
 
-  const handleClick = () => setClick(!click);
+  const handleClick = (tab) => {
+    setActiveTab(tab);
+  };
+
   const closeMobileMenu = () => setClick(false);
 
   const showButton = () => {
@@ -31,43 +35,37 @@ function Navbar() {
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
             RPI Composite
           </Link>
-          {/* <div className='menu-icon' onClick={handleClick}>
-            <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
-          </div> */}
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-            <li className='nav-item'>
-              <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+            <li className={`nav-item ${activeTab === 'Home' ? 'active' : ''}`} onClick={() => handleClick('Home')}>
+              <Link to='/' className='nav-links'>
                 Home
               </Link>
             </li>
-            <li className='nav-item'>
+            <li className={`nav-item ${activeTab === 'Calendar' ? 'active' : ''}`} onClick={() => handleClick('Calendar')}>
               <Link
                 to='/calpage'
                 className='nav-links'
-                onClick={closeMobileMenu}
               >
                 Calendar
               </Link>
             </li>
-            <li className='nav-item'>
+            <li className={`nav-item ${activeTab === 'Housing' ? 'active' : ''}`} onClick={() => handleClick('Housing')}>
               <Link
                 to='/housing'
                 className='nav-links'
-                onClick={closeMobileMenu}
               >
                 Housing
               </Link>
             </li>
-            <li className='nav-item'>
+            <li className={`nav-item ${activeTab === 'Dining' ? 'active' : ''}`} onClick={() => handleClick('Dining')}>
               <Link
                 to='/dining'
                 className='nav-links'
-                onClick={closeMobileMenu}
               >
                 Dining
               </Link>
             </li>
-            <li className='nav-item'>
+            <li className={`nav-item ${activeTab === 'Catalog' ? 'active' : ''}`} onClick={() => handleClick('Catalog')}>
               <Link
                 to='/catalog'
                 className='nav-links'
@@ -76,7 +74,7 @@ function Navbar() {
                 Catalog
               </Link>
             </li>
-            <li className='nav-item'>
+            <li className={`nav-item ${activeTab === 'CS Template' ? 'active' : ''}`} onClick={() => handleClick('CS Template')}>
               <Link
                 to='/cstemplate'
                 className='nav-links'
@@ -85,23 +83,13 @@ function Navbar() {
                 CS Template
               </Link>
             </li>
-            <li className='nav-item'>
+            <li className={`nav-item ${activeTab === 'Other Help' ? 'active' : ''}`} onClick={() => handleClick('Other Help')}>
               <Link
                 to='/otherhelp'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
                 Other Help
-              </Link>
-            </li>
-            
-            <li className='nav-item'>
-              <Link
-                to='/options'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-                Options
               </Link>
             </li>
           </ul>

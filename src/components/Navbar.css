@@ -48,6 +48,19 @@
   .nav-item {
     margin-top: 4vh;
     height: 8vh;
+    position: relative; /* Add position relative to the nav-item */
+  }
+  
+  /* Add this CSS to apply the highlighting effect for the active tab */
+  .nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 60%;
+    height: 4px;
+    background-color: #000000;
+    transform: translateX(-50%);
   }
   
   .nav-links {
