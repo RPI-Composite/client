@@ -39,10 +39,10 @@
     grid-template-columns: repeat(8, auto);
     grid-gap: 10px;
     list-style: none;
-    text-align: center;
+    /*text-align: center;
     width: 60vw;
     justify-content: end;
-    margin-right: 2rem;
+    margin-right: 2rem;*/
   }
   
   .nav-item {
