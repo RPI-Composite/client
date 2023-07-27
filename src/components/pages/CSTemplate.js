@@ -99,77 +99,87 @@ function CSTemplate() {
     console.log("scienceOption:", scienceOption);
 
     return (
-        <div className="container">
-          <h1>Rensselaer Course Selection</h1>
-    
-          {/* Required Courses */}
-          <div className="coursesList">
-            <h2>Required Courses</h2>
-            <ul className="courses">
-              {requiredCourses.map((course) => (
-                <li key={course.id}>
-                  <span className="course-code">{course["id"]}</span> - <span className="course-title">{course["title"]}</span>
-                  <p className="course-desc">{course["desc"]}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-    
-          {/* Math Option I */}
-          <div className='coursesList'>
-            <h2>Math Option I</h2>
-            <ul className="courses">
-              {mathOptionI.map((course) => (
-                <li key={course.id}>
-                  <span className="course-code">{course["id"]}</span> - <span className="course-title">{course["title"]}</span>
-                  <p className="course-desc">{course["desc"]}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-    
-          {/* Math Option II */}
-          <div className='coursesList'>
-            <h2>Math Option II</h2>
-            <ul className='courses'>
-              {mathOptionII.map((course) => (
-                <li key={course.id}>
-                  <span className="course-code">{course["id"]}</span> - <span className="course-title">{course["title"]}</span>
-                  <p className="course-desc">{course["desc"]}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-    
-          {/* CS Option */}
-          <div className='coursesList'>
-            <h2>CS Option</h2>
-            <ul className='courses'>
-              {csOption.map((course) => (
-                <li key={course.id}>
-                  <span className="course-code">{course["id"]}</span> - <span className="course-title">{course["title"]}</span>
-                  <p className="course-desc">{course["desc"]}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-    
-          {/* Science Option */}
-          <div className='coursesList'>
-            <h2>Science Option</h2>
-            <ul className='courses'>
-              {scienceOption.map((course) => (
-                <li key={course.id}>
-                  <span className="course-code">{course["id"]}</span> - <span className="course-title">{course["title"]}</span>
-                  <p className="course-desc">{course["desc"]}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
+      <div className="container">
+        <h1>Rensselaer Course Selection</h1>
+  
+        {/* Required Courses */}
+        <div className="coursesList">
+          <h2>Required Courses</h2>
+          <ul className="courses">
+            {requiredCourses.map((course) => (
+              <li key={course.id}>
+                <a className="course-link" href={`http://localhost:3001/class/${course.id.toLowerCase()}`}>
+                  <span className="course-code">{course.id}</span> - <span className="course-title">{course.title}</span>
+                </a>
+                <p className="course-desc">{course.desc}</p>
+              </li>
+            ))}
+          </ul>
         </div>
-      );
-    };
-    
-    export default CSTemplate;
+  
+        {/* Math Option I */}
+        <div className="coursesList">
+          <h2>Math Option I</h2>
+          <ul className="courses">
+            {mathOptionI.map((course) => (
+              <li key={course.id}>
+                <a className="course-link" href={`http://localhost:3001/class/${course.id.toLowerCase()}`}>
+                  <span className="course-code">{course.id}</span> - <span className="course-title">{course.title}</span>
+                </a>
+                <p className="course-desc">{course.desc}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+  
+        {/* Math Option II */}
+        <div className="coursesList">
+          <h2>Math Option II</h2>
+          <ul className="courses">
+            {mathOptionII.map((course) => (
+              <li key={course.id}>
+                <a className="course-link" href={`http://localhost:3001/class/${course.id.toLowerCase()}`}>
+                  <span className="course-code">{course.id}</span> - <span className="course-title">{course.title}</span>
+                </a>
+                <p className="course-desc">{course.desc}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+  
+        {/* CS Option */}
+        <div className="coursesList">
+          <h2>CS Option</h2>
+          <ul className="courses">
+            {csOption.map((course) => (
+              <li key={course.id}>
+                <a className="course-link" href={`http://localhost:3001/class/${course.id.toLowerCase()}`}>
+                  <span className="course-code">{course.id}</span> - <span className="course-title">{course.title}</span>
+                </a>
+                <p className="course-desc">{course.desc}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+  
+        {/* Science Option */}
+        <div className="coursesList">
+          <h2>Science Option</h2>
+          <ul className="courses">
+            {scienceOption.map((course) => (
+              <li key={course.id}>
+                <a className="course-link" href={`http://localhost:3001/class/${course.id.toLowerCase()}`}>
+                  <span className="course-code">{course.id}</span> - <span className="course-title">{course.title}</span>
+                </a>
+                <p className="course-desc">{course.desc}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    );
+  }
+  
+  export default CSTemplate;
 
 
