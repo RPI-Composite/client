@@ -9,7 +9,7 @@ function OtherHelp() {
     
     <div>
       <div>
-        <h1>Campus Map and Disorientation Guide</h1>
+        <h1><u>Campus Map and Disorientation Guide</u></h1>
         <div className='pdfs'>
           <object
           data="./PDFs/RPI_Campus_Map.pdf"
@@ -36,7 +36,7 @@ function OtherHelp() {
       </div>
 
       <div>
-      <h1>Other Useful Links:</h1>
+      <h1><u>Other Useful Links</u></h1>
         <div className='usefulLinks'> 
           <p><a href="https://hasspathways.com/">Hass Pathways</a></p>
           <p><a href="https://info.rpi.edu/campus-card/">Check your Flex/RAD Balance here</a></p>
