@@ -27,7 +27,7 @@ function Catalog() {
         <h1>Welcome to the RPI Catalog Page</h1>
         <h2>Below you view a list of schools from the RPI catalog</h2>
       </div>
-      <div>
+      <div className='tableAlign'>
         <table>
           <tbody>
             {catalogInfo.map((school, index) => {
