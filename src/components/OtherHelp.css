@@ -1,21 +1,42 @@
 h1 {
-    font-size: 60px;
+    font-size: 45px;
     font-weight: bold;
     color: #333;
     margin-bottom: 10px;
     display: flex;
-  justify-content: center;
-  align-items: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .pdfs {
-    margin-left: 125px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.objectDisplayed {
+    width: 90%;
+    height: 500px;
+    margin-bottom: 20px;
+}
+
+.usefulLinksContainer {
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
 .usefulLinks {
     margin-bottom: 2vh;
     background-color: aliceblue;
     border-bottom: 2px solid black;
+    width: 75vw;
+    height: fit-content;
+}
+
+.usefulLinks p {
+    margin-left: 15px;
 }
 
 .usefulLinks a:link {
@@ -29,5 +50,5 @@ h1 {
 
 .usefulLinks a:visited {
     text-decoration: none;
-    color: red; 
+    color: black; 
 }
