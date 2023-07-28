@@ -29,20 +29,22 @@ function Housing() {
   return (
     <div className='bodyMain'>
       <h1>Housing Page</h1>
-      <div>
+      <div className='housingPageAlign'>
         <h2>Dorms</h2>
-        <table>
-          <tbody>
-            {Object.keys(dormInfo).map((dormKey) => {
-              return (
-                <tr>
-                  <th>{dormInfo[dormKey]['cohort']}</th>
-                  <th><a className='housingURL' href={"http://localhost:3001/housing/" + dormKey}>{dormInfo[dormKey].name}</a></th>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+        <div className='tableAlign'>
+          <table>
+            <tbody>
+              {Object.keys(dormInfo).map((dormKey) => {
+                return (
+                  <tr>
+                    <th>{dormInfo[dormKey]['cohort']}</th>
+                    <th><a className='housingURL' href={"http://localhost:3001/housing/" + dormKey}>{dormInfo[dormKey].name}</a></th>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

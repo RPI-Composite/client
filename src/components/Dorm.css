@@ -67,3 +67,13 @@ tr:nth-child(even) {
   color: #000000;
   text-decoration: underline;
 }
+
+.tableAlign {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.housingPageAlign {
+  text-align: center;
+}
