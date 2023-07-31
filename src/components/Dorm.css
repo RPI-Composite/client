@@ -60,10 +60,3 @@ tr:nth-child(even) {
 .housingURL:visited {
   color: #ca262c;
 }
-
-.housingURL:hover,
-.housingURL:focus,
-.housingURL:active {
-  color: #000000;
-  text-decoration: underline;
-}

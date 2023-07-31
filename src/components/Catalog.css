@@ -47,13 +47,6 @@
   .catalogURL:visited {
     color: #ca262c;
   }
-  
-  .catalogURL:hover,
-  .catalogURL:focus,
-  .catalogURL:active {
-    color: #000000;
-    text-decoration: underline;
-  }
 
   .catalogHeader {
     width: 100%;
