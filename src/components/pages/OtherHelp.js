@@ -8,8 +8,8 @@ function OtherHelp() {
   return (
     
     <div>
-      <div>
       <h1><u>Other Useful Links</u></h1>
+      <div className='usefulLinksContainer'>
         <div className='usefulLinks'> 
           <p><a href="https://lms.rpi.edu/"target="_blank">RPI Learning Management System</a></p>
           <p><a href="https://sis.rpi.edu/"target="_blank">Self-Service Information System</a></p>
@@ -28,8 +28,7 @@ function OtherHelp() {
           <object
           data="./PDFs/RPI_Campus_Map.pdf"
           type="application/pdf"
-          width="90%"
-          height="500px"
+          className='objectDisplayed'
           >
           <p>
             Your browser does not support PDF viewing. You can view the campus map PDF <a href="./PDFs/RPI_Campus_Map.pdf">here</a>.
@@ -39,8 +38,7 @@ function OtherHelp() {
           <object
           data="./PDFs/RPI_Disorientation_Guide.pdf"
           type="application/pdf"
-          width="90%"
-          height="500px"
+          className='objectDisplayed'
           >
           <p>
             Your browser does not support PDF viewing. You can view the disorientation guide PDF <a href="./PDFs/RPI_Disorientation_Guide.pdf">here</a>.

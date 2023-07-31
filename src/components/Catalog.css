@@ -41,6 +41,12 @@
   .catalogURL {
     text-decoration: none;
   }
+
+  .tableAlign {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+  }
   
   /* Set the link color for different states */
   .catalogURL:link,
