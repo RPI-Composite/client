@@ -26,6 +26,23 @@ const convertMonthToDigit = monthName => {
   return months[monthName];
 };
 
+// Function to customize event content
+const renderEventContent = ({ event }) => {
+  return (
+    <>
+      <b>{event.title}</b>
+      <br />
+      <span style={{ fontSize: '12px' }}>
+        {event.start.toLocaleString()}
+      </span>
+      <br />
+      <a href={event.url} target="_blank" rel="noopener noreferrer">View Details</a>
+    </>
+  );
+};
+
+
+
 
 
 
@@ -100,6 +117,8 @@ function CalPage() {
       <Fullcalendar
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
         initialView={"dayGridMonth"}
+        eventContent={renderEventContent} // Call renderEventContent function for custom event rendering
+        events={events}
         customButtons={{
           exportICS: {
             text: "Export ICS",
@@ -107,18 +126,18 @@ function CalPage() {
           },
         }}
         headerToolbar={{
-          start: "today prev,next", // will normally be on the left. if RTL, will be on the right
+          start: "today prev,next",
           center: "title",
-          end: "dayGridMonth,timeGridWeek,timeGridDay", // will normally be on the right. if RTL, will be on the left
+          end: "dayGridMonth,timeGridWeek,timeGridDay",
         }}
         footerToolbar={{
           end: "exportICS",
         }}
         height={"90vh"}
-        events={events}
       />
     </div>
   );
 }
+
 
 export default CalPage;
