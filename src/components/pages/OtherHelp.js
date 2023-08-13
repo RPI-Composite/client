@@ -15,7 +15,6 @@ function OtherHelp() {
           <p><a href="https://sis.rpi.edu/"target="_blank">Self-Service Information System</a></p>
           <p><a href="https://info.rpi.edu/bias-assessment-response-team/resources"target="_blank">Student Health Resources</a></p>
           <p><a href="https://hasspathways.com/"target="_blank">Hass Pathways</a></p>
-          <p><a href="https://info.rpi.edu/campus-card/"target="_blank">Check your Flex/RAD Balance here</a></p>
           <p><a href="https://dotcio.rpi.edu/services/support-and-training/help-desk"target="_blank">Help Desk</a></p>
           <p><a href="https://itssc.rpi.edu/hc/en-us"target="_blank">IT Services</a></p> 
           <p><a href="https://rpiathletics.com/"target="_blank">Athletics</a></p>
