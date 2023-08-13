@@ -12,7 +12,7 @@ function Housing() {
 
   const fetchDormInfo = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/dorms');
+      const response = await axios.get(`${(window.location.href.includes('localhost')) ? 'http://localhost:3000' : 'https://rpi-composite-server-a93993c40133.herokuapp.com'}/dorms`);
       const data = response.data;
       setDormInfo(data);
     }
@@ -38,7 +38,7 @@ function Housing() {
                 return (
                   <tr>
                     <th>{dormInfo[dormKey]['cohort']}</th>
-                    <th><a className='housingURL' href={"http://localhost:3001/housing/" + dormKey}>{dormInfo[dormKey].name}</a></th>
+                    <th><a className='housingURL' href={"/housing/" + dormKey}>{dormInfo[dormKey].name}</a></th>
                   </tr>
                 );
               })}

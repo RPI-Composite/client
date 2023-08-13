@@ -56,7 +56,7 @@ function constructPage(key, val) {
     else if (key == 'communityinfo') {
         return (
             <div id="comminfo">
-                <h1 className='sectTitle'>Room Types</h1>
+                <h1 className='sectTitle'>Community Info</h1>
                 <table>
                     <tbody>
                         <tr>
@@ -177,7 +177,7 @@ function constructPage(key, val) {
     else if (key == 'amentitiesinfo') {
         return (
             <div id="amentitiesinfo">
-                <h1 className='sectTitle'>Room Types</h1>
+                <h1 className='sectTitle'>Amenities</h1>
                 <table>
                     <tbody>
                         <tr>
@@ -282,7 +282,7 @@ function Housing() {
         try {
             // const response = await axios.get('http://localhost:3000/dorms');
             const url = window.location.pathname.replace('/housing/', '');
-            const response = await axios.get(`http://localhost:3000/dorm/${url}`);
+            const response = await axios.get(`${(window.location.href.includes('localhost')) ? 'http://localhost:3000' : 'https://rpi-composite-server-a93993c40133.herokuapp.com'}/dorm/${url}`);
             const data = response.data;
             setDormInfo(data);
         }

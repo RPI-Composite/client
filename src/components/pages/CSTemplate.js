@@ -77,7 +77,7 @@ function CSTemplate() {
         try {
             const responseArray = await Promise.all(
                 queries.map(async (query) => {
-                    const response = await axios.get(`http://localhost:3000/searchCourses?query=${query}`);
+                    const response = await axios.get(`${(window.location.href.includes('localhost')) ? 'http://localhost:3000' : 'https://rpi-composite-server-a93993c40133.herokuapp.com'}/searchCourses?query=${query}`);
                     return response.data;
                 })
             );
@@ -108,7 +108,7 @@ function CSTemplate() {
           <ul className="courses">
             {requiredCourses.map((course) => (
               <li key={course.id}>
-                <a className="course-link" href={`http://localhost:3001/class/${course.id.toLowerCase()}`}>
+                <a className="course-link" href={`/class/${course.id.toLowerCase()}`}>
                   <span className="course-code">{course.id}</span> - <span className="course-title">{course.title}</span>
                 </a>
                 <p className="course-desc">{course.desc}</p>
@@ -123,7 +123,7 @@ function CSTemplate() {
           <ul className="courses">
             {mathOptionI.map((course) => (
               <li key={course.id}>
-                <a className="course-link" href={`http://localhost:3001/class/${course.id.toLowerCase()}`}>
+                <a className="course-link" href={`/class/${course.id.toLowerCase()}`}>
                   <span className="course-code">{course.id}</span> - <span className="course-title">{course.title}</span>
                 </a>
                 <p className="course-desc">{course.desc}</p>
@@ -138,7 +138,7 @@ function CSTemplate() {
           <ul className="courses">
             {mathOptionII.map((course) => (
               <li key={course.id}>
-                <a className="course-link" href={`http://localhost:3001/class/${course.id.toLowerCase()}`}>
+                <a className="course-link" href={`/class/${course.id.toLowerCase()}`}>
                   <span className="course-code">{course.id}</span> - <span className="course-title">{course.title}</span>
                 </a>
                 <p className="course-desc">{course.desc}</p>
@@ -153,7 +153,7 @@ function CSTemplate() {
           <ul className="courses">
             {csOption.map((course) => (
               <li key={course.id}>
-                <a className="course-link" href={`http://localhost:3001/class/${course.id.toLowerCase()}`}>
+                <a className="course-link" href={`/class/${course.id.toLowerCase()}`}>
                   <span className="course-code">{course.id}</span> - <span className="course-title">{course.title}</span>
                 </a>
                 <p className="course-desc">{course.desc}</p>
@@ -168,7 +168,7 @@ function CSTemplate() {
           <ul className="courses">
             {scienceOption.map((course) => (
               <li key={course.id}>
-                <a className="course-link" href={`http://localhost:3001/class/${course.id.toLowerCase()}`}>
+                <a className="course-link" href={`/class/${course.id.toLowerCase()}`}>
                   <span className="course-code">{course.id}</span> - <span className="course-title">{course.title}</span>
                 </a>
                 <p className="course-desc">{course.desc}</p>

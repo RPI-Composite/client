@@ -17,7 +17,7 @@ function Class() {
   const fetchCatalogInfo = async () => {
     try {
       const url = window.location.pathname.replace('/class/', '');
-      const response = await axios.get(`http://localhost:3000/searchCourses?query=${url}`);
+      const response = await axios.get(`${(window.location.href.includes('localhost')) ? 'http://localhost:3000' : 'https://rpi-composite-server-a93993c40133.herokuapp.com'}/searchCourses?query=${url}`);
       const data = response.data;
       // Convert the object data into an array
       const dataArray = Object.values(data);

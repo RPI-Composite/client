@@ -55,7 +55,7 @@ function CalPage() {
 
   const fetchEvents = () => {
     axios
-      .get('http://localhost:3000/acalRaw')
+      .get(`${(window.location.href.includes('localhost')) ? 'http://localhost:3000' : 'https://rpi-composite-server-a93993c40133.herokuapp.com'}/acalRaw`)
       .then(response => {
         const eventData = response.data;
 
@@ -102,7 +102,7 @@ function CalPage() {
   };
 
   const handleExportICS = () => {
-    fetch('http://localhost:3000/calics')
+    fetch(`${(window.location.href.includes('localhost')) ? 'http://localhost:3000' : 'https://rpi-composite-server-a93993c40133.herokuapp.com'}/calics`)
       .then(response => response.blob())
       .then(blob => {
         saveAs(blob, 'calendar.ics');

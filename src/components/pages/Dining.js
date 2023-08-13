@@ -26,7 +26,7 @@ function Dining() {
 
   const fetchDiningData = async () => {
     try {
-      const diningHallInfoResponse = await axios.get('http://localhost:3000/dininghallinfo', {
+      const diningHallInfoResponse = await axios.get(`${(window.location.href.includes('localhost')) ? 'http://localhost:3000' : 'https://rpi-composite-server-a93993c40133.herokuapp.com'}/dininghallinfo`, {
         params: {
           alldata: true,
         },
@@ -36,10 +36,10 @@ function Dining() {
       localStorage.setItem('diningHallInfo', JSON.stringify(diningHallInfoResponse.data));
       setDiningHallInfo(diningHallInfoResponse.data);
 
-      const mealPricesResponse = await axios.get('http://localhost:3000/diningprices');
+      const mealPricesResponse = await axios.get(`${(window.location.href.includes('localhost')) ? 'http://localhost:3000' : 'https://rpi-composite-server-a93993c40133.herokuapp.com'}/diningprices`);
       setMealPrices(mealPricesResponse.data);
 
-      const diningPlansResponse = await axios.get('http://localhost:3000/diningplans');
+      const diningPlansResponse = await axios.get(`${(window.location.href.includes('localhost')) ? 'http://localhost:3000' : 'https://rpi-composite-server-a93993c40133.herokuapp.com'}/diningplans`);
       setDiningPlans(diningPlansResponse.data);
     } catch (error) {
       console.error('Error fetching data:', error);

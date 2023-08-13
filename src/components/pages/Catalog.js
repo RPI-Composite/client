@@ -12,7 +12,8 @@ function Catalog() {
 
   const fetchCatalogInfo = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/schools');
+      const url = (window.location.href.includes('localhost')) ? 'http://localhost:3000' : 'https://rpi-composite-server-a93993c40133.herokuapp.com';
+      const response = await axios.get(`${url}/schools`);
       const data = response.data;
       setCatalogInfo(data);
     }
@@ -37,7 +38,7 @@ function Catalog() {
                   <th>
                   {school.depts.map((dept, index) => {
                     return (
-                      <li><a className='catalogURL' href={"http://localhost:3001/class/" + (dept.code).toLowerCase()}>{dept.code + " " + dept.name}</a></li>
+                      <li><a className='catalogURL' href={"/class/" + (dept.code).toLowerCase()}>{dept.code + " " + dept.name}</a></li>
                     );
                   })}
                   </th>
