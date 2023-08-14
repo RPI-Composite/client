@@ -37,11 +37,11 @@
 
 /* Gradients of red and green for even and odd dining hall sections */
 .diningHallSection.even {
-    background: linear-gradient(to right, #ff0000, #e0a910);
+    background: linear-gradient(to right, #cdf227, #e0a910);
   }
   
   .diningHallSection.odd {
-    background: linear-gradient(to right, #00ff00, #0af0ca);
+    background: linear-gradient(to right, #3501ac, #0af0ca);
   }
   
   
