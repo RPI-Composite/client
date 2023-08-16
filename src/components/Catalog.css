@@ -1,62 +1,69 @@
-  .bodyMain {
-    align-items: center;
-    justify-content: center;
-  }
+.bodyMain {
+  align-items: center;
+  justify-content: center;
+}
 
-  .alignTitle {
-    width: 100%;
-    text-align: center;
-  }
+.alignTitle {
+  width: 100%;
+  text-align: center;
+}
 
-  .bodyMainClass {
-    margin-left: 15vw;
-    margin-right: 15vw;
-    margin-top: 40px;
-    margin-bottom: 15vh;
-    border: 2px solid #dddddd;
-  }
+.bodyMainClass {
+  margin-left: 15vw;
+  margin-right: 15vw;
+  margin-top: 40px;
+  margin-bottom: 15vh;
+  border: 2px solid #dddddd;
+}
 
-  .courseDetails {
-    border-top: 2px solid #dddddd;
-    border-bottom: 2px solid #dddddd;
-  }
-  
-  th {
-    border: 1px solid #dddddd;
-    background-color: #ffffff;
-    text-align: left;
-    padding: 8px;
-    width: 33%;
-  }
-  
-  
-  tr {
-    background-color: #ffffff; /* Change this color to the one you desire */
-  }
+.courseDetails {
+  border-top: 2px solid #dddddd;
+  border-bottom: 2px solid #dddddd;
+}
 
-  li {
-    list-style-type: none;
-  }
-  
-  .catalogURL {
-    text-decoration: none;
-  }
+th {
+  border: 1px solid #dddddd;
+  background-color: #ffffff;
+  text-align: left;
+  padding: 8px;
+  width: 33%;
+}
 
-  .tableAlign {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-  }
-  
-  /* Set the link color for different states */
-  .catalogURL:link,
-  .catalogURL:visited {
-    color: #ca262c;
-  }
 
-  .catalogHeader {
-    width: 100%;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 30px;
-  }
+tr {
+  background-color: #ffffff; /* Change this color to the one you desire */
+}
+
+li {
+  list-style-type: none;
+}
+
+.catalogURL {
+  text-decoration: none;
+}
+
+.tableAlign {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+/* Set the link color for different states */
+.catalogURL:link,
+.catalogURL:visited {
+  color: #ca262c;
+}
+
+.catalogURL:hover,
+.catalogURL:focus,
+.catalogURL:active {
+  color: #000000;
+  text-decoration: underline;
+}
+
+.catalogHeader {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}

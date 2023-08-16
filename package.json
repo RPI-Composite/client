@@ -45,5 +45,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "RPI Composite is a web application built with React that provides a platform for managing composite materials. It includes features such as a calendar for scheduling material production, options for customization, and user authentication.",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }

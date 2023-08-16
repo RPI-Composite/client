@@ -90,7 +90,7 @@ function Dining() {
 
   return (
     <div className="bodyMain">
-      <h1 className="titleMain" style={{ fontSize: '36px', fontWeight: 'bold', color: 'blue', textTransform: 'uppercase', textAlign: 'center' }}>Rensselaer Dining</h1>
+      <h1 className="titleMain" style={{ fontSize: '45px', fontWeight: 'bold', textTransform: 'uppercase', textAlign: 'center' }}>Rensselaer Dining</h1>
       {diningHallInfo ? (
         <div className="diningMain">
           {Object.entries(diningHallInfo).map(([category, halls]) => (
@@ -103,12 +103,11 @@ function Dining() {
                       {hall.toUpperCase()}
                     </a>
                   </h3>
-                  {info.desc && <p className="diningHallDescription"><span style={{textDecoration: 'underline'}}>Description:</span><br />{info.desc}</p>}
-                  {info.phone && <p>Phone: <a href={"tel:+1" + info.phone}>{formatPhoneNumber(info.phone)}</a></p>}
+                  {info.desc && <p className="diningHallDescription" style={{marginBottom: '5px'}}><span>Description:</span><br />{info.desc}</p>}
+                  {info.phone && <p className="diningHallDescription" style={{marginBottom: '5px'}}><span>Phone:</span> <a className='phoneAndLoc' href={"tel:+1" + info.phone}>{formatPhoneNumber(info.phone)}</a></p>}
                   {info.loc && (
-                    <p>
-                      <a href={getLocationLink(info.loc.lat, info.loc.long)} target="_blank" style={{fontFamily: "-moz-initial"}}>
-                        Location:</a>
+                    <p className="diningHallDescription" style={{marginBottom: '5px'}}><span>Location:</span> <a className='phoneAndLoc' href={getLocationLink(info.loc.lat, info.loc.long)} target="_blank">
+                        Click for location</a>
                     </p>
                   )}
                   {mealPrices && mealPrices[hall] && (
